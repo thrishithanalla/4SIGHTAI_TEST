@@ -1,0 +1,59 @@
+/* Cursor Styles */
+#cursorFollower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--neon-blue);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s, border-color 0.3s;
+  mix-blend-mode: difference;
+}
+
+#cursorFollower.hovering {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 229, 255, 0.2);
+  border-color: transparent;
+}
+
+#cursorFollower.clicking {
+  transform: translate(-50%, -50%) scale(0.8);
+}
+
+.cursor-glow {
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(0, 229, 255, 0.05) 0%, rgba(0,0,0,0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9998;
+}
+
+.cursor-trail {
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  background-color: var(--neon-blue);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.6;
+  transition: opacity 0.5s;
+}
+
+.cursor-particle {
+  position: fixed;
+  width: 2px;
+  height: 2px;
+  background-color: var(--neon-purple);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+}
