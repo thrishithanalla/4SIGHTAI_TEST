@@ -159,7 +159,7 @@ const Contact = () => {
                                         </label>
                                     </div>
 
-                                    <button type="submit" className="btn btn-primary" style={{ width: '100%' }}>
+                                    <button type="submit" className="btn btn-primary" style={{ width: '100%' }} disabled={!formData.privacy}>
                                         Send Message
                                     </button>
 
@@ -204,8 +204,8 @@ const Contact = () => {
                                             <div>
                                                 <h4 style={{ color: 'var(--primary-navy)', marginBottom: '0.25rem' }}>Email</h4>
                                                 <p style={{ margin: 0 }}>
-                                                    <a href="mailto:contact@4sightai.com" style={{ color: 'var(--secondary-cyan)' }}>contact@4sightai.com</a><br />
-                                                    <a href="mailto:sales@4sightai.com" style={{ color: 'var(--secondary-cyan)' }}>sales@4sightai.com</a>
+                                                    <a href="mailto:contact@4sightai.com" style={{ color: 'var(--gray)' }}>contact@4sightai.com</a><br />
+                                                    <a href="mailto:sales@4sightai.com" style={{ color: 'var(--gray)' }}>sales@4sightai.com</a>
                                                 </p>
                                             </div>
                                         </div>
