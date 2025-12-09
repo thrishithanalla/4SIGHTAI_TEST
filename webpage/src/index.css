@@ -2271,3 +2271,102 @@ select:focus {
     display: none !important;
   }
 }
+
+/* ========== CUSTOM CHECKBOX ========== */
+/* Hide default browser checkbox */
+.checkbox-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 25px;
+  /* Match checkmark size */
+  width: 25px;
+  z-index: 20;
+  /* Ensure input is on top to catch clicks reliably */
+  left: 0;
+  top: 0;
+}
+
+.checkbox-label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 24px;
+  cursor: pointer;
+  font-size: 1rem;
+  user-select: none;
+  color: var(--gray);
+}
+
+/* Custom checkbox container */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #f0f0f0;
+  /* Explicit light color */
+  border: 1px solid #999;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+/* On mouse-over, add a grey background color and shadow */
+.checkbox-label:hover input~.checkmark {
+  background-color: #e0e0e0;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+/* When the checkbox is checked, add a dark background */
+.checkbox-label input:checked~.checkmark {
+  background-color: #000000 !important;
+  /* Force black */
+  border-color: #000000 !important;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "✔";
+  position: absolute;
+  display: none;
+  color: #ffffff !important;
+  /* Force white */
+  font-size: 16px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1;
+}
+
+/* Show the checkmark when checked */
+.checkbox-label input:checked~.checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+/* This rule is now redundant as its properties are moved to .checkmark:after */
+/*
+.checkbox-label .checkmark:after {
+  content: "✔";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: auto;
+  border: none;
+  font-size: 16px;
+  color: #ffffff;
+  line-height: 1;
+}
+*/
+
+/* Disabled button state */
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+  filter: grayscale(100%);
+}
