@@ -403,37 +403,37 @@ const Home = () => {
                         <div className="stat-item premium-stat" data-index="0">
                             <span className="stat-number" data-target="7">0</span>
                             <span className="stat-label">Industries</span>
-                            <div className="stat-sparkle">✨</div>
+                            
                         </div>
                         <div className="stat-item premium-stat" data-index="1">
                             <span className="stat-number" data-target="2">0</span>
                             <span className="stat-label">Deployments</span>
-                            <div className="stat-sparkle">⚡</div>
+                           
                         </div>
                         <div className="stat-item premium-stat" data-index="2">
                             <span className="stat-number" data-target="3">0</span>
                             <span className="stat-label">In Works</span>
-                            <div className="stat-sparkle">🔥</div>
+                            
                         </div>
                         <div className="stat-item premium-stat" data-index="3">
                             <span className="stat-number" data-target="2">0</span>
                             <span className="stat-label">In Blueprinting</span>
-                            <div className="stat-sparkle">🚀</div>
+                            
                         </div>
                         <div className="stat-item premium-stat" data-index="4">
                             <span className="stat-number" data-target="1">0</span>
                             <span className="stat-label">In Discussions</span>
-                            <div className="stat-sparkle">💡</div>
+                           
                         </div>
                         <div className="stat-item premium-stat" data-index="5">
                             <span className="stat-number" data-target="10000">0</span>
                             <span className="stat-label">Research Hours</span>
-                            <div className="stat-sparkle">🧠</div>
+                            
                         </div>
                         <div className="stat-item premium-stat" data-index="6">
                             <span className="stat-number" data-target="60">0</span>
                             <span className="stat-label">AI Productivity Increase (%)</span>
-                            <div className="stat-sparkle">📈</div>
+                            
                         </div>
                     </div>
                 </div>
