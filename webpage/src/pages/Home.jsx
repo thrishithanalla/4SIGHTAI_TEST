@@ -106,8 +106,42 @@ const Home = () => {
         }
     ];
 
+    // Responsive Carousel Logic
+    const [itemsPerPage, setItemsPerPage] = useState(3);
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth < 900) {
+                setItemsPerPage(1);
+            } else {
+                setItemsPerPage(3);
+            }
+        };
+
+        // Initial check
+        handleResize();
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    // Auto-Swipe for Mobile
+    useEffect(() => {
+        let interval;
+        if (itemsPerPage === 1) {
+            interval = setInterval(() => {
+                // Products Auto-Swipe
+                setCurrentProductIndex(prev => (prev >= products.length - 1 ? 0 : prev + 1));
+
+                // Services Auto-Swipe
+                setCurrentServiceIndex(prev => (prev >= services.length - 1 ? 0 : prev + 1));
+            }, 3000); // 3 seconds interval
+        }
+        return () => clearInterval(interval);
+    }, [itemsPerPage, products.length, services.length]);
+
     const handleServiceNext = () => {
-        if (currentServiceIndex < services.length - 3) {
+        if (currentServiceIndex < services.length - itemsPerPage) {
             setCurrentServiceIndex(prev => prev + 1);
         }
     };
@@ -119,7 +153,7 @@ const Home = () => {
     };
 
     const handleProductNext = () => {
-        if (currentProductIndex < products.length - 3) {
+        if (currentProductIndex < products.length - itemsPerPage) {
             setCurrentProductIndex(prev => prev + 1);
         }
     };
@@ -275,7 +309,7 @@ const Home = () => {
                         <div className="content-carousel-container">
                             <div
                                 className="content-carousel-track"
-                                style={{ transform: `translateX(-${currentProductIndex * (100 / 3)}%)` }}
+                                style={{ transform: `translateX(-${currentProductIndex * (100 / itemsPerPage)}%)` }}
                             >
                                 {products.map((product, index) => (
                                     <div key={product.id} className={`card card-dark carousel-card-item ${product.delay ? product.delay : 'fade-in'}`}>
@@ -293,9 +327,9 @@ const Home = () => {
                         </div>
 
                         <button
-                            className={`carousel-nav-btn next ${currentProductIndex >= products.length - 3 ? 'disabled' : ''}`}
+                            className={`carousel-nav-btn next ${currentProductIndex >= products.length - itemsPerPage ? 'disabled' : ''}`}
                             onClick={handleProductNext}
-                            disabled={currentProductIndex >= products.length - 3}
+                            disabled={currentProductIndex >= products.length - itemsPerPage}
                             aria-label="Next Product"
                         >
                             &#10095;
@@ -329,7 +363,7 @@ const Home = () => {
                         <div className="content-carousel-container">
                             <div
                                 className="content-carousel-track"
-                                style={{ transform: `translateX(-${currentServiceIndex * (100 / 3)}%)` }}
+                                style={{ transform: `translateX(-${currentServiceIndex * (100 / itemsPerPage)}%)` }}
                             >
                                 {services.map((service, index) => (
                                     <div key={service.id} className={`card carousel-card-item fade-in ${service.delay}`}>
@@ -347,9 +381,9 @@ const Home = () => {
                         </div>
 
                         <button
-                            className={`carousel-nav-btn next ${currentServiceIndex >= services.length - 3 ? 'disabled' : ''}`}
+                            className={`carousel-nav-btn next ${currentServiceIndex >= services.length - itemsPerPage ? 'disabled' : ''}`}
                             onClick={handleServiceNext}
-                            disabled={currentServiceIndex >= services.length - 3}
+                            disabled={currentServiceIndex >= services.length - itemsPerPage}
                             aria-label="Next Service"
                         >
                             &#10095;

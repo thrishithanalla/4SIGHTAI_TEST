@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
-    const location = useLocation();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -19,27 +18,24 @@ const Navbar = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
-    const isActive = (path) => {
-        return location.pathname === path ? 'active' : '';
-    };
-
     return (
         <header className={scrolled ? 'scrolled' : ''}>
             <nav>
                 <Link to="/" className="logo">
-                    <img src="/logo.png" alt="4sight AI" className="logo-icon" />
-
+                    <img src="/logo.png" className="logo-icon" alt="4Sight AI" />
                 </Link>
-                <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`} id="navLinks">
-                    <li><Link to="/" className={isActive('/')}>Home</Link></li>
-                    <li><Link to="/about" className={isActive('/about')}>About</Link></li>
-                    <li><Link to="/products" className={isActive('/products')}>Products</Link></li>
-                    <li><Link to="/services" className={isActive('/services')}>Services</Link></li>
-                    <li><Link to="/contact" className={isActive('/contact')}>Contact</Link></li>
+
+                <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
+                    <li><NavLink to="/" onClick={() => setIsMenuOpen(false)}>Home</NavLink></li>
+                    <li><NavLink to="/about" onClick={() => setIsMenuOpen(false)}>About</NavLink></li>
+                    <li><NavLink to="/products" onClick={() => setIsMenuOpen(false)}>Products</NavLink></li>
+                    <li><NavLink to="/services" onClick={() => setIsMenuOpen(false)}>Services</NavLink></li>
+                    <li><NavLink to="/events" onClick={() => setIsMenuOpen(false)}>Events</NavLink></li>
+                    <li><NavLink to="/contact" onClick={() => setIsMenuOpen(false)}>Contact</NavLink></li>
                 </ul>
+
                 <button
                     className={`menu-toggle ${isMenuOpen ? 'active' : ''}`}
-                    id="menuToggle"
                     aria-label="Toggle navigation menu"
                     onClick={toggleMenu}
                 >

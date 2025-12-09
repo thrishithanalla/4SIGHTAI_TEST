@@ -226,8 +226,8 @@ nav {
 }
 
 .logo-icon {
-  width: 50px;
-  height: 50px;
+  width: auto;
+  height: 40px;
   object-fit: contain;
   /* Reset background clip for image if inherited */
   background: none;
@@ -515,7 +515,7 @@ nav {
 }
 
 .card:hover {
-  transform: translateY(-15px) rotateX(10deg) rotateY(10deg) scale(1.02);
+  transform: none;
   box-shadow: var(--box-shadow-hover);
 }
 
@@ -610,8 +610,8 @@ nav {
 }
 
 .card:hover .card-image img {
-  transform: scale(1.1) translateY(-5px);
-  /* Parallax-like effect */
+  transform: none;
+  /* Parallax-like effect removed */
 }
 
 /* Ripple Click Effect */
@@ -639,7 +639,7 @@ nav {
 }
 
 .card:hover .card-image img {
-  transform: scale(1.1);
+  transform: none;
 }
 
 .card-icon {
@@ -658,7 +658,7 @@ nav {
 }
 
 .card:hover .card-icon {
-  transform: scale(1.1) rotate(5deg);
+  transform: none;
 }
 
 .animated-svg {
@@ -1467,25 +1467,6 @@ footer::before {
     bottom: 20px;
     right: 20px;
     font-size: 1.2rem;
-  }
-}
-
-/* Small Mobile */
-@media (max-width: 480px) {
-  :root {
-    --spacing-md: 1rem;
-    --spacing-lg: 1.5rem;
-  }
-
-  .container {
-    padding: 0 var(--spacing-sm);
-  }
-
-  .hero-text h1 {
-    font-size: 1.75rem;
-  }
-
-  .section-header h2 {
     font-size: 1.75rem;
   }
 
@@ -2228,5 +2209,65 @@ select:focus {
   .carousel-card-item {
     flex: 0 0 100%;
     /* 1 card visible */
+  }
+
+}
+
+/* ========== PRIMEREACT TABMENU OVERRIDES ========== */
+.p-tabmenu .p-tabmenu-nav {
+  background: transparent !important;
+  border: none !important;
+  gap: var(--spacing-sm);
+}
+
+.p-tabmenu .p-tabmenuitem .p-menuitem-link {
+  background: transparent !important;
+  border: none !important;
+  color: var(--secondary-cyan) !important;
+  font-family: var(--font-primary) !important;
+  font-weight: 500 !important;
+  transition: var(--transition) !important;
+  padding: 1rem 1.5rem !important;
+  border-bottom: 2px solid transparent !important;
+  border-radius: var(--border-radius-small) !important;
+}
+
+/* Hover State */
+.p-tabmenu .p-tabmenuitem .p-menuitem-link:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: var(--accent-blue) !important;
+}
+
+/* API-based Active State (if PrimeReact handles it) */
+.p-tabmenu .p-tabmenuitem.p-highlight .p-menuitem-link {
+  color: var(--accent-blue) !important;
+  border-color: var(--accent-blue) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Icon styling */
+.p-tabmenu .p-menuitem-icon {
+  margin-right: 0.5rem;
+  color: inherit;
+}
+
+/* Remove default focus ring */
+.p-tabmenu .p-menuitem-link:focus {
+  box-shadow: none !important;
+}
+
+/* Mobile Carousel Fix & Hide Nav Buttons */
+@media (max-width: 900px) {
+  .content-carousel-track {
+    gap: 0;
+  }
+
+  .carousel-card-item {
+    flex: 0 0 100%;
+    padding: 0 var(--spacing-xs);
+  }
+
+  .carousel-nav-btn {
+    display: none !important;
   }
 }
