@@ -29,7 +29,7 @@ export const HeaderNavigationBase = ({ items, trailingContent }) => {
             {/* Primary Tier */}
             <div className="header-tier-primary">
                 <Link to="/" className="header-logo">
-                    4SIGHT AI
+                    <img src="/logo.png" alt="4SIGHT AI" style={{ height: '40px', width: 'auto' }} />
                 </Link>
 
                 <nav className="nav-items-primary">
