@@ -1,0 +1,151 @@
+/* Header Navigation Styles */
+.header-nav-container {
+    background-color: #ffffff;
+    border-bottom: 1px solid #eaecf0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    font-family: 'Inter', sans-serif;
+}
+
+.header-tier-primary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    height: 72px;
+    border-bottom: 1px solid #eaecf0;
+}
+
+.header-logo {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #101828;
+    margin-right: 2rem;
+    text-decoration: none;
+}
+
+.nav-items-primary {
+    display: flex;
+    gap: 0.25rem;
+    /* Decreased gap */
+    align-items: center;
+    flex: 1;
+    justify-content: flex-end;
+    /* Align all items to the right */
+}
+
+.nav-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.4rem 0.75rem;
+    /* Slightly reduced padding */
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: #475467;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+    background-color: #f9fafb;
+    color: #182230;
+}
+
+.nav-link.active {
+    background-color: #f9fafb;
+    color: #182230;
+}
+
+.header-trailing {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+/* Secondary Tier */
+.header-tier-secondary {
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    height: 52px;
+    background-color: #ffffff;
+    overflow-x: auto;
+}
+
+.nav-items-secondary {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link-secondary {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: #475467;
+    text-decoration: none;
+    padding: 0.25rem 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.nav-link-secondary:hover {
+    color: #00e5ff;
+}
+
+.nav-link-secondary.active {
+    color: #00e5ff;
+    border-bottom-color: #00e5ff;
+}
+
+/* Button Component Styles */
+.custom-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.2s;
+    outline: none;
+}
+
+.custom-btn-secondary {
+    background-color: #ffffff;
+    border-color: #d0d5dd;
+    color: #344054;
+    box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+}
+
+.custom-btn-secondary:hover {
+    background-color: #f9fafb;
+    border-color: #d0d5dd;
+    color: #182230;
+}
+
+.custom-btn-sm {
+    padding: 8px 14px;
+    font-size: 0.875rem;
+}
+
+/* Mobile Responsiveness (Simple Stack) */
+@media (max-width: 768px) {
+    .header-tier-primary {
+        padding: 0 1rem;
+    }
+
+    .header-tier-secondary {
+        padding: 0 1rem;
+    }
+
+    .nav-items-primary {
+        display: none;
+        /* TODO: Implement mobile menu toggle */
+    }
+}
