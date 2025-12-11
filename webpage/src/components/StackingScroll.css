@@ -36,9 +36,15 @@
     box-sizing: border-box;
     /* Background is needed for the card to cover the one below it */
     background-color: transparent;
-    /* The card inside has the background, but the section needs to allow pass-through of background? 
-       Actually, standard sticky behavior works. 
-    */
+    z-index: 10;
+    /* Ensure it stays above the spacer */
+}
+
+.stacking-spacer {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 1;
 }
 
 /* Card Styles matching the reference */
