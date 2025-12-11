@@ -1,6 +1,30 @@
 import React, { useEffect } from 'react';
 
+import { Link, useLocation } from 'react-router-dom';
+
 const About = () => {
+    const location = useLocation();
+
+    useEffect(() => {
+        // Scroll to top when component mounts (optional, but good for navigation)
+        // window.scrollTo(0, 0); 
+        // Actually, if we have a hash, we might not want to force top first, 
+        // but often 'scroll to top' prevents starting in middle of prev page. 
+        // The other pages do: window.scrollTo(0,0) then check hash.
+
+        if (!location.hash) {
+            window.scrollTo(0, 0);
+        } else {
+            // Check for hash to scroll to specific section if needed
+            const element = document.getElementById(location.hash.substring(1));
+            if (element) {
+                // Small timeout to ensure rendering is complete if needed, though usually standard works
+                setTimeout(() => {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+            }
+        }
+    }, [location]);
     return (
         <>
             {/* Hero Section */}
