@@ -1,9 +1,13 @@
 /* Stacking Scroll Section Styles */
 .stacking-scroll-container {
-    height: 100vh;
-    overflow-y: auto;
+    position: relative;
+    width: 100%;
+    /* Background for the whole track */
+    background-color: #f8f9fa;
     /* Enable standard vertical scrolling */
     scroll-behavior: smooth;
+    /* Enforce snapping to sections */
+    scroll-snap-type: y mandatory;
     /* Hide scrollbar for cleaner look */
     scrollbar-width: none;
     /* Firefox */
@@ -24,11 +28,17 @@
     top: 0;
     height: 100vh;
     width: 100%;
+    /* Ensure content is centered */
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 2rem;
     box-sizing: border-box;
+    /* Background is needed for the card to cover the one below it */
+    background-color: transparent;
+    /* The card inside has the background, but the section needs to allow pass-through of background? 
+       Actually, standard sticky behavior works. 
+    */
 }
 
 /* Card Styles matching the reference */
@@ -36,6 +46,7 @@
     display: flex;
     flex-direction: row;
     background: #ffffff;
+    /* Important: Solid background to cover cards underneath */
     border-radius: 20px;
     box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.08);
     /* Shadow pointed up to emphasize stacking */
