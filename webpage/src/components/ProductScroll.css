@@ -1,0 +1,165 @@
+/* Product Scroll Section Styles */
+.product-scroll-container {
+    height: 100vh;
+    overflow-y: auto;
+    /* Enable standard vertical scrolling */
+    scroll-behavior: smooth;
+    /* Hide scrollbar for cleaner look */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE 10+ */
+    background-color: #f8f9fa;
+    /* Light gray background for contrast */
+}
+
+.product-scroll-container::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+    /* Chrome/Safari/WebKit */
+}
+
+.product-scroll-section {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+/* Card Styles matching the reference */
+.product-card-snap {
+    display: flex;
+    flex-direction: row;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.08);
+    /* Shadow pointed up to emphasize stacking */
+    width: 100%;
+    max-width: 1200px;
+    height: 70vh;
+    max-height: 600px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    /* Subtle border */
+    transition: transform 0.3s ease;
+}
+
+.product-card-content {
+    flex: 1;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.product-card-image {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    /* Optional: angled background or shape */
+}
+
+.product-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+/* Typography matching reference */
+.product-card-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #000;
+}
+
+.product-summary-label {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #333;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.product-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 3rem;
+    max-width: 90%;
+}
+
+.read-more-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #666;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+    width: fit-content;
+}
+
+.read-more-link:hover {
+    color: #000;
+    border-color: #000;
+    gap: 15px;
+}
+
+/* Image overlay/effects from reference (Tech circles, etc) - simplified for now */
+.product-card-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 20%);
+    pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .product-card-snap {
+        flex-direction: column;
+        height: 85vh;
+        max-height: none;
+    }
+
+    .product-card-content {
+        padding: 2rem;
+        order: 2;
+        justify-content: flex-start;
+    }
+
+    .product-card-image {
+        flex: 0 0 40%;
+        order: 1;
+    }
+
+    .product-card-image img {
+        border-radius: 20px 20px 0 0;
+    }
+
+    .product-card-title {
+        font-size: 1.8rem;
+    }
+
+    .product-description {
+        font-size: 1rem;
+    }
+}
