@@ -306,11 +306,11 @@ nav {
 .hero {
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   background: var(--gradient-hero);
   position: relative;
   overflow: hidden;
-  padding-top: var(--header-height);
+  padding-top: calc(var(--header-height) + 120px);
   perspective: 1000px;
   animation: heroBackgroundShift 8s ease-in-out infinite;
 }
