@@ -20,7 +20,8 @@ const Home = () => {
             desc: 'Comprehensive AI infrastructure solution designed to wrap around your existing systems, enabling seamless AI integration and intelligent automation.',
             img: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&q=80',
             alt: 'AI Envelop - Enterprise AI Infrastructure',
-            delay: 'fade-in'
+            delay: 'fade-in',
+            link: '/products/ai-envelop'
         },
         {
             id: 'ai-copilot-consulting',
@@ -28,7 +29,8 @@ const Home = () => {
             desc: 'Specialized intelligent assistant that helps consultants deliver deeper insights, faster analysis, and strategic recommendations.',
             img: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80',
             alt: 'AI Co-pilot for Consulting',
-            delay: 'fade-in fade-in-delay-1'
+            delay: 'fade-in fade-in-delay-1',
+            link: '/products/ai-copilot-consulting'
         },
         {
             id: 'nutrition-copilot',
@@ -36,7 +38,8 @@ const Home = () => {
             desc: 'AI-powered wellness platform that provides personalized dietary recommendations and health insights for wellness enterprises.',
             img: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&q=80',
             alt: 'Nutrition Co-Pilot',
-            delay: 'fade-in fade-in-delay-2'
+            delay: 'fade-in fade-in-delay-2',
+            link: '/products/nutrition-copilot'
         },
         {
             id: 'news-ai',
@@ -44,7 +47,8 @@ const Home = () => {
             desc: 'Intelligent news aggregation platform providing curated, analyzed, and contextualized insights tailored to specific interests.',
             img: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&q=80',
             alt: 'News AI Platform',
-            delay: 'fade-in fade-in-delay-3'
+            delay: 'fade-in fade-in-delay-3',
+            link: '/products/news-ai'
         },
         {
             id: 'ai-copilot-police',
@@ -52,7 +56,8 @@ const Home = () => {
             desc: 'Sophisticated public safety tool assisting law enforcement with data analysis, pattern recognition, and resource allocation.',
             img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80',
             alt: 'AI Co-pilot for Police',
-            delay: 'fade-in'
+            delay: 'fade-in',
+            link: '/products/ai-copilot-police'
         },
         {
             id: 'personal-finance-copilot',
@@ -60,7 +65,8 @@ const Home = () => {
             desc: 'AI-powered financial advisor for Pocket FM users, helping manage budgets, track expenses, and plan financial futures.',
             img: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80',
             alt: 'Personal Finance Co-pilot',
-            delay: 'fade-in fade-in-delay-1'
+            delay: 'fade-in fade-in-delay-1',
+            link: '/products/personal-finance-copilot'
         },
         {
             id: 'underworks',
@@ -68,7 +74,8 @@ const Home = () => {
             desc: 'Comprehensive AI-powered educational platform with specialized co-pilots: Study Buddy, Lab Technician, and Campus Co-pilot.',
             img: 'https://images.unsplash.com/photo-1504711331083-9c895941bf81?w=800&q=80',
             alt: 'UnderWorks Education Platform',
-            delay: 'fade-in fade-in-delay-2'
+            delay: 'fade-in fade-in-delay-2',
+            link: '/products/underworks'
         }
     ];
 
@@ -79,7 +86,8 @@ const Home = () => {
             desc: 'Strategic guidance on integrating Generative AI into your business operations, identifying high-impact use cases and creating actionable roadmaps.',
             img: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&q=80',
             alt: 'AI Robot Strategy Consulting',
-            delay: ''
+            delay: '',
+            link: '/services/genai-advisory'
         },
         {
             id: 'scoping',
@@ -87,7 +95,8 @@ const Home = () => {
             desc: 'Detailed project planning and architecture design for GenAI implementations, ensuring alignment with business objectives and technical feasibility.',
             img: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80',
             alt: 'AI Robot Project Planning',
-            delay: 'fade-in-delay-1'
+            delay: 'fade-in-delay-1',
+            link: '/services/project-scoping'
         },
         {
             id: 'poc',
@@ -95,7 +104,8 @@ const Home = () => {
             desc: 'Rapid development of proof-of-concept solutions to validate AI use cases and demonstrate value before full-scale implementation.',
             img: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&q=80',
             alt: 'AI Robot Development',
-            delay: 'fade-in-delay-2'
+            delay: 'fade-in-delay-2',
+            link: '/services/building-poc'
         },
         {
             id: 'consulting',
@@ -103,7 +113,8 @@ const Home = () => {
             desc: 'Comprehensive consulting services covering all aspects of GenAI adoption, from strategy to implementation and ongoing optimization.',
             img: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&q=80',
             alt: 'AI Robot Consulting Team',
-            delay: 'fade-in-delay-3'
+            delay: 'fade-in-delay-3',
+            link: '/services/genai-consulting'
         }
     ];
 
@@ -125,7 +136,7 @@ const Home = () => {
             desc: 'In a world where the utility of Artificial Intelligence is increasingly indisputable, we envision seamless integration of AI across all enterprise operations, driving unprecedented efficiency and innovation.',
             img: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80',
             label: 'ABOUT 4SIGHT AI',
-            link: '/about',
+            link: '/about#vision',
             linkText: 'Read Our Vision'
         },
         {
@@ -134,7 +145,7 @@ const Home = () => {
             desc: 'We begin with comprehensive audits to identify AI opportunities, then guide enterprises through strategic transition phases, culminating in full-scale automation and AGI integration.',
             img: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&q=80',
             label: 'ABOUT 4SIGHT AI',
-            link: '/about',
+            link: '/about#approach',
             linkText: 'Discover Our Process'
         }
     ];

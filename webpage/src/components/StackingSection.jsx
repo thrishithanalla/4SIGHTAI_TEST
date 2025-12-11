@@ -10,6 +10,7 @@ const StackingSection = ({ items }) => {
                     <StackingCard item={item} index={index} />
                 </div>
             ))}
+            <div className="stacking-spacer"></div>
         </div>
     );
 };
