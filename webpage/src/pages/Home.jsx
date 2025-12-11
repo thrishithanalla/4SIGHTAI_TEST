@@ -18,7 +18,7 @@ const Home = () => {
             id: 'ai-envelop',
             title: 'AI Envelop',
             desc: 'Comprehensive AI infrastructure solution designed to wrap around your existing systems, enabling seamless AI integration and intelligent automation.',
-            img: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&q=80',
+            img: '/AI Envelope.png',
             alt: 'AI Envelop - Enterprise AI Infrastructure',
             delay: 'fade-in',
             link: '/products/ai-envelop'
@@ -27,7 +27,7 @@ const Home = () => {
             id: 'ai-copilot-consulting',
             title: 'AI Co-pilot (Consulting)',
             desc: 'Specialized intelligent assistant that helps consultants deliver deeper insights, faster analysis, and strategic recommendations.',
-            img: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80',
+            img: '/AI Co-pilot Consulting.png',
             alt: 'AI Co-pilot for Consulting',
             delay: 'fade-in fade-in-delay-1',
             link: '/products/ai-copilot-consulting'
@@ -36,7 +36,7 @@ const Home = () => {
             id: 'nutrition-copilot',
             title: 'Nutrition Co-Pilot',
             desc: 'AI-powered wellness platform that provides personalized dietary recommendations and health insights for wellness enterprises.',
-            img: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&q=80',
+            img: '/Nutrition CO-PILOT.png',
             alt: 'Nutrition Co-Pilot',
             delay: 'fade-in fade-in-delay-2',
             link: '/products/nutrition-copilot'
@@ -45,7 +45,7 @@ const Home = () => {
             id: 'news-ai',
             title: 'News AI',
             desc: 'Intelligent news aggregation platform providing curated, analyzed, and contextualized insights tailored to specific interests.',
-            img: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&q=80',
+            img: '/News AI.png',
             alt: 'News AI Platform',
             delay: 'fade-in fade-in-delay-3',
             link: '/products/news-ai'
@@ -54,7 +54,7 @@ const Home = () => {
             id: 'ai-copilot-police',
             title: 'AI Co-pilot (Police)',
             desc: 'Sophisticated public safety tool assisting law enforcement with data analysis, pattern recognition, and resource allocation.',
-            img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80',
+            img: '/AI CO-PILOT(Police).png',
             alt: 'AI Co-pilot for Police',
             delay: 'fade-in',
             link: '/products/ai-copilot-police'
@@ -63,7 +63,7 @@ const Home = () => {
             id: 'personal-finance-copilot',
             title: 'Personal Finance Co-pilot',
             desc: 'AI-powered financial advisor for Pocket FM users, helping manage budgets, track expenses, and plan financial futures.',
-            img: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80',
+            img: '/Personal FInance Co-pilot.png',
             alt: 'Personal Finance Co-pilot',
             delay: 'fade-in fade-in-delay-1',
             link: '/products/personal-finance-copilot'
@@ -84,7 +84,7 @@ const Home = () => {
             id: 'advisory',
             title: 'GenAI Advisory',
             desc: 'Strategic guidance on integrating Generative AI into your business operations, identifying high-impact use cases and creating actionable roadmaps.',
-            img: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&q=80',
+            img: '/GENAI Advisory.png',
             alt: 'AI Robot Strategy Consulting',
             delay: '',
             link: '/services/genai-advisory'
@@ -93,7 +93,7 @@ const Home = () => {
             id: 'scoping',
             title: 'Project Scoping & Blueprint',
             desc: 'Detailed project planning and architecture design for GenAI implementations, ensuring alignment with business objectives and technical feasibility.',
-            img: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80',
+            img: '/Project Scoping and Blueprint.png',
             alt: 'AI Robot Project Planning',
             delay: 'fade-in-delay-1',
             link: '/services/project-scoping'
@@ -102,7 +102,7 @@ const Home = () => {
             id: 'poc',
             title: 'Building GenAI POC',
             desc: 'Rapid development of proof-of-concept solutions to validate AI use cases and demonstrate value before full-scale implementation.',
-            img: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&q=80',
+            img: '/Building GenAI POC.png',
             alt: 'AI Robot Development',
             delay: 'fade-in-delay-2',
             link: '/services/building-poc'
@@ -111,7 +111,7 @@ const Home = () => {
             id: 'consulting',
             title: 'GenAI Consulting',
             desc: 'Comprehensive consulting services covering all aspects of GenAI adoption, from strategy to implementation and ongoing optimization.',
-            img: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&q=80',
+            img: '/GENAI Consultation.png',
             alt: 'AI Robot Consulting Team',
             delay: 'fade-in-delay-3',
             link: '/services/genai-consulting'

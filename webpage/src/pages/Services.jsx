@@ -190,6 +190,31 @@ const Services = () => {
                         font-size: 2.5rem !important;
                     }
                 }
+
+                @media (max-width: 600px) {
+                    .container {
+                        padding-left: 1rem !important;
+                        padding-right: 1rem !important;
+                    }
+                    .unified-card-container {
+                        padding: 1.5rem !important;
+                        border-radius: 16px !important;
+                    }
+                    .unified-layout-grid {
+                        gap: 1.5rem !important;
+                    }
+                    .unified-content h2 {
+                        font-size: 1.5rem !important;
+                        margin-bottom: 0.75rem !important;
+                    }
+                    .unified-content p {
+                        font-size: 0.95rem !important;
+                        margin-bottom: 1.5rem !important;
+                    }
+                    .services-list {
+                        gap: 2rem !important;
+                    }
+                }
             `}</style>
         </div>
     );
