@@ -6,13 +6,13 @@
 /* ========== CSS VARIABLES ========== */
 :root {
   /* Color Palette */
-  --primary-navy: #000000;
-  --secondary-cyan: #ffffff;
-  --accent-blue: #404040;
-  --gradient-primary: linear-gradient(135deg, #ffffff 0%, #b0b0b0 100%);
-  --gradient-text-dark: linear-gradient(135deg, #000000 0%, #404040 100%);
-  --gradient-dark: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-  --gradient-hero: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+  --primary-navy: #609af8;
+  --secondary-cyan: #e6f0ff;
+  --accent-blue: #4b89e8;
+  --gradient-primary: linear-gradient(135deg, #ffffff 0%, #dbe9ff 100%);
+  --gradient-text-dark: linear-gradient(135deg, #609af8 0%, #3572d1 100%);
+  --gradient-dark: linear-gradient(135deg, #609af8 0%, #2960bd 100%);
+  --gradient-hero: linear-gradient(135deg, #609af8 0%, #2960bd 100%);
 
   /* Neutral Colors */
   --white: #ffffff;
@@ -320,19 +320,19 @@ nav {
 
   0%,
   100% {
-    background: linear-gradient(135deg, #000000 0%, #333333 100%);
+    background: linear-gradient(135deg, #609af8 0%, #2960bd 100%);
   }
 
   25% {
-    background: linear-gradient(135deg, #1a1a1a 0%, #4d4d4d 50%, #1a1a1a 100%);
+    background: linear-gradient(135deg, #4b89e8 0%, #3572d1 50%, #4b89e8 100%);
   }
 
   50% {
-    background: linear-gradient(225deg, #000000 0%, #666666 50%, #333333 100%);
+    background: linear-gradient(225deg, #609af8 0%, #4b89e8 50%, #2960bd 100%);
   }
 
   75% {
-    background: linear-gradient(315deg, #1a1a1a 0%, #4d4d4d 50%, #1a1a1a 100%);
+    background: linear-gradient(315deg, #3572d1 0%, #2960bd 50%, #3572d1 100%);
   }
 }
 
@@ -532,15 +532,15 @@ nav {
   }
 
   25% {
-    background: linear-gradient(45deg, #ffffff 0%, #a0a0a0 50%, #404040 100%);
+    background: linear-gradient(45deg, #ffffff 0%, #609af8 50%, #2960bd 100%);
   }
 
   50% {
-    background: linear-gradient(90deg, #ffffff 0%, #cccccc 50%, #808080 100%);
+    background: linear-gradient(90deg, #ffffff 0%, #8ab3f9 50%, #4b89e8 100%);
   }
 
   75% {
-    background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 50%, #606060 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #b2cdf9 50%, #3572d1 100%);
   }
 }
 
@@ -903,7 +903,7 @@ nav {
 .form-group.error input,
 .form-group.error textarea,
 .form-group.error select {
-  border-color: var(--danger);
+  /* border-color removed */
 }
 
 .form-group.error .form-error {
@@ -1787,7 +1787,7 @@ select:focus {
 .form-group select,
 .form-group textarea {
   padding: var(--spacing-sm);
-  border: 2px solid var(--light-gray);
+  border: 2px solid #a5a2a2;
   border-radius: var(--border-radius-small);
   font-size: 1rem;
   transition: var(--transition);
@@ -1803,10 +1803,10 @@ select:focus {
   box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.1);
 }
 
-.form-group input:invalid,
-.form-group select:invalid,
-.form-group textarea:invalid {
-  border-color: #e74c3c;
+.was-validated .form-group input:invalid,
+.was-validated .form-group select:invalid,
+.was-validated .form-group textarea:invalid {
+  /* border-color removed */
 }
 
 .form-group .form-error {
@@ -1816,9 +1816,9 @@ select:focus {
   display: none;
 }
 
-.form-group input:invalid+.form-error,
-.form-group select:invalid+.form-error,
-.form-group textarea:invalid+.form-error {
+.was-validated .form-group input:invalid+.form-error,
+.was-validated .form-group select:invalid+.form-error,
+.was-validated .form-group textarea:invalid+.form-error {
   display: block;
 }
 
@@ -2002,7 +2002,7 @@ select:focus {
 .form-group input:invalid,
 .form-group select:invalid,
 .form-group textarea:invalid {
-  border-color: #e74c3c;
+  border-color: #a5a2a2;
 }
 
 .form-group .form-error {
