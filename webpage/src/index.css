@@ -2319,6 +2319,8 @@ select:focus {
 }
 
 /* When the checkbox is checked, add a dark background */
+/* When the checkbox is checked, add a dark background */
+/* When the checkbox is checked, add a dark background */
 .checkbox-label input:checked~.checkmark {
   background-color: #000000 !important;
   /* Force black */
