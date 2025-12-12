@@ -58,8 +58,12 @@ const Contact = () => {
     return (
         <>
             {/* Hero Section */}
-            <section className="hero" style={{ minHeight: '50vh' }}>
-                <div className="morphing-blob"></div>
+            <section className="hero" style={{
+                minHeight: '50vh',
+                backgroundColor: '#2e2e57',
+                backgroundImage: 'none',
+                animation: 'none'
+            }}>
                 <div className="container">
                     <div style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}>
                         <h1 className="explosive-text">Get In Touch</h1>
@@ -69,6 +73,13 @@ const Contact = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Override styles to remove global hero effects (dots/overlay) */}
+            <style>{`
+                .hero::before, .hero::after {
+                    display: none !important;
+                }
+            `}</style>
 
             {/* Contact Section */}
             <section className="section">

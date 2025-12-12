@@ -6,13 +6,15 @@
 /* ========== CSS VARIABLES ========== */
 :root {
   /* Color Palette */
-  --primary-navy: #609af8;
-  --secondary-cyan: #e6f0ff;
-  --accent-blue: #4b89e8;
-  --gradient-primary: linear-gradient(135deg, #ffffff 0%, #dbe9ff 100%);
-  --gradient-text-dark: linear-gradient(135deg, #609af8 0%, #3572d1 100%);
-  --gradient-dark: linear-gradient(135deg, #609af8 0%, #2960bd 100%);
-  --gradient-hero: linear-gradient(135deg, #609af8 0%, #2960bd 100%);
+  --primary-navy: #2e2e57;
+  --secondary-cyan: #e6e6f2;
+  /* Lighter tint of #2e2e57 */
+  --accent-blue: #4a4a8a;
+  /* Lighter shade */
+  --gradient-primary: linear-gradient(135deg, #ffffff 0%, #eaeaf5 100%);
+  --gradient-text-dark: linear-gradient(135deg, #2e2e57 0%, #4a4a8a 100%);
+  --gradient-dark: linear-gradient(135deg, #2e2e57 0%, #1b1b38 100%);
+  --gradient-hero: linear-gradient(135deg, #2e2e57 0%, #1b1b38 100%);
 
   /* Neutral Colors */
   --white: #ffffff;

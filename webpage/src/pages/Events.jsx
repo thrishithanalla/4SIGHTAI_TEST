@@ -8,7 +8,12 @@ const Events = () => {
 
     return (
         <>
-            <section className="hero" style={{ minHeight: '60vh' }}>
+            <section className="hero" style={{
+                minHeight: '60vh',
+                backgroundColor: '#2e2e57',
+                backgroundImage: 'none',
+                animation: 'none'
+            }}>
                 <div className="container">
                     <div style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}>
                         <h1>Events</h1>
@@ -18,6 +23,13 @@ const Events = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Override styles to remove global hero effects (dots/overlay) */}
+            <style>{`
+                .hero::before, .hero::after {
+                    display: none !important;
+                }
+            `}</style>
 
             <section className="section">
                 <div className="container">
