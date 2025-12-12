@@ -3,6 +3,17 @@ import { Link } from 'react-router-dom';
 import CanvasBackground from '../components/CanvasBackground';
 import useScrollAnimations from '../hooks/useScrollAnimations';
 import StackingSection from '../components/StackingSection';
+import aiEnvelopImg from '../assets/ai_envelop.jpg';
+import aiCopilotConsultingImg from '../assets/AI Co-pilot Consulting.png';
+import nutritionCopilotImg from '../assets/Nutrition CO-PILOT.png';
+import newsAiImg from '../assets/News AI.png';
+import aiCopilotPoliceImg from '../assets/AI CO-PILOT(Police).png';
+import personalFinanceImg from '../assets/Personal FInance Co-pilot.png';
+import genaiAdvisoryImg from '../assets/GENAI Advisory.png';
+import scopingImg from '../assets/Project Scoping and Blueprint.png';
+import pocImg from '../assets/Building GenAI POC.png';
+import genaiConsultingImg from '../assets/GENAI Consultation.png';
+
 
 const Home = () => {
     useScrollAnimations();
@@ -18,7 +29,7 @@ const Home = () => {
             id: 'ai-envelop',
             title: 'AI Envelop',
             desc: 'Comprehensive AI infrastructure solution designed to wrap around your existing systems, enabling seamless AI integration and intelligent automation.',
-            img: '/AI Envelope.png',
+            img: aiEnvelopImg,
             alt: 'AI Envelop - Enterprise AI Infrastructure',
             delay: 'fade-in',
             link: '/products/ai-envelop'
@@ -27,7 +38,7 @@ const Home = () => {
             id: 'ai-copilot-consulting',
             title: 'AI Co-pilot (Consulting)',
             desc: 'Specialized intelligent assistant that helps consultants deliver deeper insights, faster analysis, and strategic recommendations.',
-            img: '/AI Co-pilot Consulting.png',
+            img: aiCopilotConsultingImg,
             alt: 'AI Co-pilot for Consulting',
             delay: 'fade-in fade-in-delay-1',
             link: '/products/ai-copilot-consulting'
@@ -36,7 +47,7 @@ const Home = () => {
             id: 'nutrition-copilot',
             title: 'Nutrition Co-Pilot',
             desc: 'AI-powered wellness platform that provides personalized dietary recommendations and health insights for wellness enterprises.',
-            img: '/Nutrition CO-PILOT.png',
+            img: nutritionCopilotImg,
             alt: 'Nutrition Co-Pilot',
             delay: 'fade-in fade-in-delay-2',
             link: '/products/nutrition-copilot'
@@ -45,7 +56,7 @@ const Home = () => {
             id: 'news-ai',
             title: 'News AI',
             desc: 'Intelligent news aggregation platform providing curated, analyzed, and contextualized insights tailored to specific interests.',
-            img: '/News AI.png',
+            img: newsAiImg,
             alt: 'News AI Platform',
             delay: 'fade-in fade-in-delay-3',
             link: '/products/news-ai'
@@ -54,7 +65,7 @@ const Home = () => {
             id: 'ai-copilot-police',
             title: 'AI Co-pilot (Police)',
             desc: 'Sophisticated public safety tool assisting law enforcement with data analysis, pattern recognition, and resource allocation.',
-            img: '/AI CO-PILOT(Police).png',
+            img: aiCopilotPoliceImg,
             alt: 'AI Co-pilot for Police',
             delay: 'fade-in',
             link: '/products/ai-copilot-police'
@@ -63,7 +74,7 @@ const Home = () => {
             id: 'personal-finance-copilot',
             title: 'Personal Finance Co-pilot',
             desc: 'AI-powered financial advisor for Pocket FM users, helping manage budgets, track expenses, and plan financial futures.',
-            img: '/Personal FInance Co-pilot.png',
+            img: personalFinanceImg,
             alt: 'Personal Finance Co-pilot',
             delay: 'fade-in fade-in-delay-1',
             link: '/products/personal-finance-copilot'
@@ -84,7 +95,7 @@ const Home = () => {
             id: 'advisory',
             title: 'GenAI Advisory',
             desc: 'Strategic guidance on integrating Generative AI into your business operations, identifying high-impact use cases and creating actionable roadmaps.',
-            img: '/GENAI Advisory.png',
+            img: genaiAdvisoryImg,
             alt: 'AI Robot Strategy Consulting',
             delay: '',
             link: '/services/genai-advisory'
@@ -93,7 +104,7 @@ const Home = () => {
             id: 'scoping',
             title: 'Project Scoping & Blueprint',
             desc: 'Detailed project planning and architecture design for GenAI implementations, ensuring alignment with business objectives and technical feasibility.',
-            img: '/Project Scoping and Blueprint.png',
+            img: scopingImg,
             alt: 'AI Robot Project Planning',
             delay: 'fade-in-delay-1',
             link: '/services/project-scoping'
@@ -102,7 +113,7 @@ const Home = () => {
             id: 'poc',
             title: 'Building GenAI POC',
             desc: 'Rapid development of proof-of-concept solutions to validate AI use cases and demonstrate value before full-scale implementation.',
-            img: '/Building GenAI POC.png',
+            img: pocImg,
             alt: 'AI Robot Development',
             delay: 'fade-in-delay-2',
             link: '/services/building-poc'
@@ -111,7 +122,7 @@ const Home = () => {
             id: 'consulting',
             title: 'GenAI Consulting',
             desc: 'Comprehensive consulting services covering all aspects of GenAI adoption, from strategy to implementation and ongoing optimization.',
-            img: '/GENAI Consultation.png',
+            img: genaiConsultingImg,
             alt: 'AI Robot Consulting Team',
             delay: 'fade-in-delay-3',
             link: '/services/genai-consulting'
@@ -155,39 +166,22 @@ const Home = () => {
     return (
         <>
             {/* Hero Section */}
-            <section className="hero">
-                {/* Animated Canvas Background */}
-                <CanvasBackground />
-
-                {/* WebGL Background */}
-                <div className="webgl-background" id="webglBackground"></div>
-
-                {/* Morphing Blob */}
-                <div className="morphing-blob" id="heroBlob">
-                    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <filter id="blobFilter">
-                                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="blob" />
-                                <feComposite in="SourceGraphic" in2="blob" operator="atop" />
-                            </filter>
-                        </defs>
-                        <path id="blobPath" d="M200,200 Q250,150 300,200 T400,200 Q450,250 400,300 T300,300 Q250,350 200,300 T100,300 Q50,250 100,200 T200,200" fill="url(#blobGradient)" filter="url(#blobFilter)" />
-                        <defs>
-                            <linearGradient id="blobGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style={{ stopColor: '#00e5ff', stopOpacity: 0.8 }} />
-                                <stop offset="50%" style={{ stopColor: '#007bff', stopOpacity: 0.6 }} />
-                                <stop offset="100%" style={{ stopColor: '#00e5ff', stopOpacity: 0.4 }} />
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                </div>
+            <section className="hero" style={{
+                backgroundColor: '#2e2e57',
+                backgroundImage: 'none',
+                animation: 'none',
+                minHeight: '100vh',
+                alignItems: 'flex-start',
+                paddingTop: '120px',
+                paddingBottom: '50px'
+            }}>
+                {/* Overlay for contrast handled by CSS .hero::before */}
 
                 <div className="container">
                     <div className="hero-content">
-                        <div className="hero-text">
-                            <p className="tagline">Empowering Enterprises to harness the power of AI</p>
-                            <h1 className="explosive-text" id="heroTitle">Welcome to 4sight AI</h1>
+                        <div className="hero-text" style={{ maxWidth: '800px' }}>
+                            <p className="tagline" style={{ whiteSpace: 'nowrap' }}>Empowering Enterprises to harness the power of AI</p>
+                            <h1 className="explosive-text" id="heroTitle" style={{ whiteSpace: 'nowrap' }}>Welcome to 4sight AI</h1>
                             <p className="subheadline">Where the future of enterprise technology begins</p>
                             <div className="cta-buttons">
                                 <Link to="/products" className="btn btn-primary" data-cursor-text="Discover our AI solutions">Explore Products</Link>
@@ -202,6 +196,13 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Override styles to remove global hero effects (dots/overlay) */}
+            <style>{`
+                .hero::before, .hero::after {
+                    display: none !important;
+                }
+            `}</style>
 
             {/* About Stacking Section */}
             <StackingSection items={aboutItems} />

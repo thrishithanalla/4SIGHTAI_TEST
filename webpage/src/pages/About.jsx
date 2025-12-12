@@ -28,8 +28,12 @@ const About = () => {
     return (
         <>
             {/* Hero Section */}
-            <section className="hero" style={{ minHeight: '60vh' }}>
-                <div className="morphing-blob"></div>
+            <section className="hero" style={{
+                minHeight: '60vh',
+                backgroundColor: '#2e2e57',
+                backgroundImage: 'none',
+                animation: 'none'
+            }}>
                 <div className="container">
                     <div style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}>
                         <h1 className="explosive-text">About 4sight AI</h1>
@@ -39,6 +43,13 @@ const About = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Override styles to remove global hero effects (dots/overlay) */}
+            <style>{`
+                .hero::before, .hero::after {
+                    display: none !important;
+                }
+            `}</style>
 
             {/* About Section */}
             <section className="section" id="about">
