@@ -218,22 +218,16 @@ nav {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 1.8rem;
-  font-weight: 700;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  letter-spacing: 1px;
+  /* Removed text background clip properties as it is now just an image */
+  background: none;
+  -webkit-text-fill-color: initial;
 }
 
 .logo-icon {
   width: auto;
-  height: 40px;
+  height: 60px;
+  /* Increased height for better visibility */
   object-fit: contain;
-  /* Reset background clip for image if inherited */
-  background: none;
-  -webkit-text-fill-color: initial;
 }
 
 .nav-links {
@@ -308,11 +302,11 @@ nav {
 .hero {
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   background: var(--gradient-hero);
   position: relative;
   overflow: hidden;
-  padding-top: var(--header-height);
+  padding-top: calc(var(--header-height) + 120px);
   perspective: 1000px;
   animation: heroBackgroundShift 8s ease-in-out infinite;
 }
