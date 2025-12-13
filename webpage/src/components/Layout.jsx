@@ -1,6 +1,6 @@
 import React from 'react';
 import { Outlet, Link } from 'react-router-dom';
-import Navbar from './Navbar';
+import HeaderNavigationDualTierDemo from './HeaderNavigation';
 import Footer from './Footer';
 
 
@@ -8,7 +8,7 @@ const Layout = () => {
     return (
         <>
 
-            <Navbar />
+            <HeaderNavigationDualTierDemo />
             <main>
                 <Outlet />
             </main>

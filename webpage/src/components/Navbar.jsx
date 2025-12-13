@@ -22,6 +22,7 @@ const Navbar = () => {
         <header className={scrolled ? 'scrolled' : ''}>
             <nav>
                 <Link to="/" className="logo">
+                    {/* Ensure we are using the PNG logo */}
                     <img src="/logo.png" className="logo-icon" alt="4Sight AI" />
                 </Link>
 

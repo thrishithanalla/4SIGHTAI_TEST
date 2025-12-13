@@ -1,11 +1,39 @@
 import React, { useEffect } from 'react';
 
+import { Link, useLocation } from 'react-router-dom';
+
 const About = () => {
+    const location = useLocation();
+
+    useEffect(() => {
+        // Scroll to top when component mounts (optional, but good for navigation)
+        // window.scrollTo(0, 0); 
+        // Actually, if we have a hash, we might not want to force top first, 
+        // but often 'scroll to top' prevents starting in middle of prev page. 
+        // The other pages do: window.scrollTo(0,0) then check hash.
+
+        if (!location.hash) {
+            window.scrollTo(0, 0);
+        } else {
+            // Check for hash to scroll to specific section if needed
+            const element = document.getElementById(location.hash.substring(1));
+            if (element) {
+                // Small timeout to ensure rendering is complete if needed, though usually standard works
+                setTimeout(() => {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+            }
+        }
+    }, [location]);
     return (
         <>
             {/* Hero Section */}
-            <section className="hero" style={{ minHeight: '60vh' }}>
-                <div className="morphing-blob"></div>
+            <section className="hero" style={{
+                minHeight: '60vh',
+                backgroundColor: '#2e2e57',
+                backgroundImage: 'none',
+                animation: 'none'
+            }}>
                 <div className="container">
                     <div style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}>
                         <h1 className="explosive-text">About 4sight AI</h1>
@@ -15,6 +43,13 @@ const About = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Override styles to remove global hero effects (dots/overlay) */}
+            <style>{`
+                .hero::before, .hero::after {
+                    display: none !important;
+                }
+            `}</style>
 
             {/* About Section */}
             <section className="section" id="about">
@@ -91,22 +126,22 @@ const About = () => {
                             <h3 style={{ color: 'var(--white)', textAlign: 'center', marginBottom: 'var(--spacing-md)' }} className="explosive-text">Key Pillars of Our Vision</h3>
                             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 'var(--spacing-md)' }}>
                                 <div className="card-3d-effect" style={{ textAlign: 'center', padding: 'var(--spacing-md)' }}>
-                                    <div className="morphing-icon" style={{ fontSize: '3rem', marginBottom: 'var(--spacing-sm)' }}>🎯</div>
+                                    <div className="morphing-icon" style={{ fontSize: '3rem', marginBottom: 'var(--spacing-sm)' }}></div>
                                     <h4 style={{ color: 'var(--secondary-cyan)', marginBottom: 'var(--spacing-xs)' }}>Strategic Integration</h4>
                                     <p style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '0.95rem' }}>AI embedded in every business process and decision point</p>
                                 </div>
                                 <div className="card-3d-effect" style={{ textAlign: 'center', padding: 'var(--spacing-md)' }}>
-                                    <div className="morphing-icon" style={{ fontSize: '3rem', marginBottom: 'var(--spacing-sm)' }}>🚀</div>
+                                    <div className="morphing-icon" style={{ fontSize: '3rem', marginBottom: 'var(--spacing-sm)' }}> </div>
                                     <h4 style={{ color: 'var(--secondary-cyan)', marginBottom: 'var(--spacing-xs)' }}>Continuous Innovation</h4>
                                     <p style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '0.95rem' }}>Always evolving with the latest AI advancements</p>
                                 </div>
                                 <div className="card-3d-effect" style={{ textAlign: 'center', padding: 'var(--spacing-md)' }}>
-                                    <div className="morphing-icon" style={{ fontSize: '3rem', marginBottom: 'var(--spacing-sm)' }}>🤝</div>
+                                    <div className="morphing-icon" style={{ fontSize: '3rem', marginBottom: 'var(--spacing-sm)' }}></div>
                                     <h4 style={{ color: 'var(--secondary-cyan)', marginBottom: 'var(--spacing-xs)' }}>Human-AI Collaboration</h4>
                                     <p style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '0.95rem' }}>Enhancing human capabilities, not replacing them</p>
                                 </div>
                                 <div className="card-3d-effect" style={{ textAlign: 'center', padding: 'var(--spacing-md)' }}>
-                                    <div className="morphing-icon" style={{ fontSize: '3rem', marginBottom: 'var(--spacing-sm)' }}>🌐</div>
+                                    <div className="morphing-icon" style={{ fontSize: '3rem', marginBottom: 'var(--spacing-sm)' }}></div>
                                     <h4 style={{ color: 'var(--secondary-cyan)', marginBottom: 'var(--spacing-xs)' }}>Universal Accessibility</h4>
                                     <p style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '0.95rem' }}>AI solutions accessible to organizations of all sizes</p>
                                 </div>
@@ -158,14 +193,14 @@ const About = () => {
                                     </div>
                                 </div>
                                 <div style={{ order: 2, textAlign: 'center' }}>
-                                    <div className="morphing-icon" style={{ fontSize: '5rem', color: 'var(--secondary-cyan)' }}>📊</div>
+                                    <div className="morphing-icon" style={{ fontSize: '5rem', color: 'var(--secondary-cyan)' }}></div>
                                 </div>
                             </div>
 
                             {/* Phase 2 */}
                             <div className="grid-2-cols mobile-order-reset" style={{ marginBottom: 'var(--spacing-xl)' }}>
                                 <div style={{ order: 2, textAlign: 'center' }}>
-                                    <div className="morphing-icon" style={{ fontSize: '5rem', color: 'var(--secondary-cyan)' }}>🔄</div>
+                                    <div className="morphing-icon" style={{ fontSize: '5rem', color: 'var(--secondary-cyan)' }}></div>
                                 </div>
                                 <div className="card card-3d-effect" style={{ order: 1 }}>
                                     <div className="card-image">
@@ -218,14 +253,14 @@ const About = () => {
                                     </div>
                                 </div>
                                 <div style={{ order: 2, textAlign: 'center' }}>
-                                    <div className="morphing-icon" style={{ fontSize: '5rem', color: 'var(--secondary-cyan)' }}>⚡</div>
+                                    <div className="morphing-icon" style={{ fontSize: '5rem', color: 'var(--secondary-cyan)' }}></div>
                                 </div>
                             </div>
 
                             {/* Phase 4 */}
                             <div className="grid-2-cols mobile-order-reset">
                                 <div style={{ order: 2, textAlign: 'center' }}>
-                                    <div className="morphing-icon" style={{ fontSize: '5rem', color: 'var(--secondary-cyan)' }}>🧠</div>
+                                    <div className="morphing-icon" style={{ fontSize: '5rem', color: 'var(--secondary-cyan)' }}></div>
                                 </div>
                                 <div className="card card-3d-effect" style={{ order: 1 }}>
                                     <div className="card-image">

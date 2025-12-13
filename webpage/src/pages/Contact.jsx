@@ -10,6 +10,7 @@ const Contact = () => {
     });
     const [status, setStatus] = useState({ type: '', message: '' });
     const [submitted, setSubmitted] = useState(false);
+    const [wasValidated, setWasValidated] = useState(false);
 
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
@@ -21,6 +22,7 @@ const Contact = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setWasValidated(true);
 
         if (!formData.privacy) {
             setStatus({ type: 'error', message: 'Please agree to the Terms & Conditions to proceed.' });
@@ -43,6 +45,7 @@ const Contact = () => {
             if (data.success) {
                 setStatus({ type: 'success', message: 'Message sent successfully!' });
                 setFormData({ name: '', email: '', phone: '', message: '', privacy: false });
+                setWasValidated(false); // Reset validation state
             } else {
                 setStatus({ type: 'error', message: data.message || 'Failed to send message.' });
             }
@@ -55,8 +58,12 @@ const Contact = () => {
     return (
         <>
             {/* Hero Section */}
-            <section className="hero" style={{ minHeight: '50vh' }}>
-                <div className="morphing-blob"></div>
+            <section className="hero" style={{
+                minHeight: '50vh',
+                backgroundColor: '#2e2e57',
+                backgroundImage: 'none',
+                animation: 'none'
+            }}>
                 <div className="container">
                     <div style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}>
                         <h1 className="explosive-text">Get In Touch</h1>
@@ -66,6 +73,13 @@ const Contact = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Override styles to remove global hero effects (dots/overlay) */}
+            <style>{`
+                .hero::before, .hero::after {
+                    display: none !important;
+                }
+            `}</style>
 
             {/* Contact Section */}
             <section className="section">
@@ -81,7 +95,7 @@ const Contact = () => {
                                     Fill out the form below and our team will get back to you within 24 hours.
                                 </p>
 
-                                <form id="contactForm" noValidate onSubmit={handleSubmit}>
+                                <form id="contactForm" noValidate onSubmit={handleSubmit} className={wasValidated ? 'was-validated' : ''}>
                                     {/* Row 1: Name and Email */}
                                     <div className="form-row">
                                         <div className="form-group">
@@ -373,7 +387,7 @@ const Contact = () => {
                             Don't wait to harness the power of AI. Reach out today and let's explore how 4sight AI can transform
                             your enterprise together.
                         </p>
-                        <a href="#contactForm" className="btn btn-primary morphing-icon" onClick={(e) => {
+                        <a href="#contactForm" className="btn btn-primary " onClick={(e) => {
                             e.preventDefault();
                             document.getElementById('name').focus();
                             document.getElementById('name').scrollIntoView({ behavior: 'smooth' });
