@@ -2315,8 +2315,6 @@ select:focus {
 }
 
 /* When the checkbox is checked, add a dark background */
-/* When the checkbox is checked, add a dark background */
-/* When the checkbox is checked, add a dark background */
 .checkbox-label input:checked~.checkmark {
   background-color: #000000 !important;
   /* Force black */
@@ -2324,7 +2322,7 @@ select:focus {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
 }
 
-/* Create the checkmark/indicator */
+/* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
   content: "✔";
   position: absolute;
@@ -2342,6 +2340,24 @@ select:focus {
 .checkbox-label input:checked~.checkmark:after {
   display: block;
 }
+
+/* Style the checkmark/indicator */
+/* This rule is now redundant as its properties are moved to .checkmark:after */
+/*
+.checkbox-label .checkmark:after {
+  content: "✔";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: auto;
+  border: none;
+  font-size: 16px;
+  color: #ffffff;
+  line-height: 1;
+}
+*/
 
 /* Disabled button state */
 .btn:disabled {
